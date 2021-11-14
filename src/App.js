@@ -1,21 +1,10 @@
+import SignupSteps from './SignupSteps';
+import 'antd/dist/antd.css';
 
 function App() {
   return (
-    <div>
-      <header className="App-header">
-        hellp
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
+    <div style={{margin: '30px'}}>
+      <SignupSteps />
     </div>
   );
 }
