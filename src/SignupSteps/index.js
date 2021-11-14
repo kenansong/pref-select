@@ -1,29 +1,44 @@
 import { Steps, Button, message } from 'antd';
 import * as React from 'react';
 import './index.css';
+import ConsentStep from './ConsentStep';
 
 const { Step } = Steps;
-
-const steps = [
-  {
-    title: 'Consent',
-    content: 'First-content',
-  },
-  {
-    title: 'Preferences',
-    content: 'Second-content',
-  },
-  {
-    title: 'Complete',
-    content: 'Last-content',
-  },
-];
 
 const SignupSteps = () => {
   const [current, setCurrent] = React.useState(0);
 
+  const [consentAgreed, setConsentAgreed] = React.useState(true);
+
+  function consentStepValidator() {
+    return consentAgreed;
+  }
+
+  const steps = [
+    {
+      title: 'Consent',
+      content: <ConsentStep 
+          hasAgreed={consentAgreed} 
+          updateHasAgreed={setConsentAgreed}
+        />,
+      validator: consentStepValidator,
+      validationFailMessage: "Please accept the terms"
+    },
+    {
+      title: 'Preferences',
+      content: 'Second-content',
+    },
+    {
+      title: 'Complete',
+      content: 'Last-content',
+    },
+  ];
+
   const next = () => {
-    setCurrent(current + 1);
+    if (!steps[current].validator || steps[current].validator())
+      setCurrent(current + 1);
+    else 
+      message.error(steps[current].validationFailMessage);
   };
 
   const prev = () => {
