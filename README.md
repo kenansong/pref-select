@@ -3,23 +3,14 @@
 This is a mocked partial user signup workflow, where user accepts the terms and select preferences before completion.
 
 ## Setup
-Make sure you have `npm` or `yarn` installed.
+Make sure you have [`yarn`](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) installed.
 
 Install indepencies by running
 ```shell
 yarn
 ```
-or
-```shell
-npm install
-```
-
 
 You can then run the app in development mode.
-```shell
-npm start
-```
-or
 ```shell
 yarn start
 ```
