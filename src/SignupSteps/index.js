@@ -8,7 +8,7 @@ const { Step } = Steps;
 const SignupSteps = () => {
   const [current, setCurrent] = React.useState(0);
 
-  const [consentAgreed, setConsentAgreed] = React.useState(true);
+  const [consentAgreed, setConsentAgreed] = React.useState(false);
 
   function consentStepValidator() {
     return consentAgreed;
