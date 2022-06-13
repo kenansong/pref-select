@@ -1,41 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import './index.css';
-import { Input, Radio, Space } from 'antd';
+import { Radio, Space } from 'antd';
 import { Checkbox } from 'antd';
 const plainOptions = ['Business&Finance', 'Technology','Singapore News','China News'
                         ,'Entertainment','Sports','Politics'];
-const options = [
-  {
-    label: 'Business&Finance',
-    value: 'Business&Finance',
-  },
-  {
-    label: 'Technology',
-    value: 'Technology',
-  },
-  {
-    label: 'Sports',
-    value: 'Sports',
-  },
-  {
-    label: 'Singapore News',
-    value: 'Singapore News',
-  },
-  {
-    label: 'China News',
-    value: 'China News',
-  },
-  {
-    label: 'Entertainment',
-    value: 'Entertainment',
-  },
-  {
-    label: 'Politics',
-    value: 'Politics',
-  },
-];
-export default function Multi_choice (
+// const options = [
+//   {
+//     label: 'Business&Finance',
+//     value: 'Business&Finance',
+//   },
+//   {
+//     label: 'Technology',
+//     value: 'Technology',
+//   },
+//   {
+//     label: 'Sports',
+//     value: 'Sports',
+//   },
+//   {
+//     label: 'Singapore News',
+//     value: 'Singapore News',
+//   },
+//   {
+//     label: 'China News',
+//     value: 'China News',
+//   },
+//   {
+//     label: 'Entertainment',
+//     value: 'Entertainment',
+//   },
+//   {
+//     label: 'Politics',
+//     value: 'Politics',
+//   },
+// ];
+export default function MultiChoice (
     { allchoice, allsetchoice,multitrue,setmultitrue}
     ) {
 

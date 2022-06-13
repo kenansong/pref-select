@@ -2,8 +2,8 @@ import { Steps, Button, message } from 'antd';
 import * as React from 'react';
 import './index.css';
 import ConsentStep from './ConsentStep';
-import Single_choice from './Single_choice';
-import Multi_choice from './Multi_choice';
+import SingleChoice from './SingleChoice';
+import MultiChoice from './MultiChoice';
 import Final from './Final';
 
 const { Step } = Steps;
@@ -36,10 +36,10 @@ const SignupSteps = () => {
     },
     {
       title: 'Preferences',
-      content: preferflag==false ? <Single_choice 
+      content: preferflag===false ? <SingleChoice 
           haschoice={value} 
           hassetValue={setValue}
-        />:<Multi_choice
+        />:<MultiChoice
           allchoice={nowvalue}
           allsetchoice={setNowvalue}
           multitrue = {multi}
@@ -59,16 +59,16 @@ const SignupSteps = () => {
   const next = () => {
     if (!steps[current].validator || steps[current].validator())
     {
-      if(current == 1)
+      if(current === 1)
       {
-          if(preferflag==false)
+          if(preferflag===false)
           {
             setPreferFlag(true);
           }
           else 
           {
             console.log(multi);
-            if(nowvalue==2 && multi.length==0) message.error(steps[current].choiceFailMessage);
+            if(nowvalue===2 && multi.length===0) message.error(steps[current].choiceFailMessage);
             else setCurrent(current+1);
           }
       }
@@ -79,9 +79,9 @@ const SignupSteps = () => {
   };
 
   const prev = () => {
-    if(current == 1)
+    if(current === 1)
     {
-      if(preferflag==true)
+      if(preferflag===true)
       {
         setPreferFlag(false);
       }
